@@ -21,14 +21,13 @@ struct HomeView: View {
                     progressBar
                     
                     remainingDistanceLabel
+                    
+                    if viewModel.canRequestTicket {
+                        requestCouponButton
+                            .padding(.top)
+                    }
                 }
                 .padding(.vertical)
-            }
-            
-            Section {
-                // POST /api/
-                requestCouponButton
-                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
         }
         .navigationTitle("Geo Brumaire")
@@ -93,6 +92,5 @@ private extension HomeView {
             }
         }
         .buttonStyle(LargeButtonStyle(foregroundColor: .white, backgroundColor: .blue))
-        .disabled(!viewModel.canRequestTicket)
     }
 }

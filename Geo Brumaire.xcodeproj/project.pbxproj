@@ -22,6 +22,9 @@
 		E748061A27DA430600A41C0D /* ChargingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748061927DA430600A41C0D /* ChargingStation.swift */; };
 		E748061D27DA4A7A00A41C0D /* FAQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748061C27DA4A7A00A41C0D /* FAQViewModel.swift */; };
 		E748062027DA4AAE00A41C0D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748061F27DA4AAE00A41C0D /* Question.swift */; };
+		E748062327DA530000A41C0D /* GetChargingStationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748062227DA530000A41C0D /* GetChargingStationsRequest.swift */; };
+		E748062527DA583100A41C0D /* ChargingStationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748062427DA583100A41C0D /* ChargingStationData.swift */; };
+		E748062827DA5B9000A41C0D /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748062727DA5B9000A41C0D /* LoadingState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		E748061927DA430600A41C0D /* ChargingStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStation.swift; sourceTree = "<group>"; };
 		E748061C27DA4A7A00A41C0D /* FAQViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewModel.swift; sourceTree = "<group>"; };
 		E748061F27DA4AAE00A41C0D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		E748062227DA530000A41C0D /* GetChargingStationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChargingStationsRequest.swift; sourceTree = "<group>"; };
+		E748062427DA583100A41C0D /* ChargingStationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStationData.swift; sourceTree = "<group>"; };
+		E748062727DA5B9000A41C0D /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 				E748061E27DA4A9D00A41C0D /* Models */,
 				E74805FC27D9EB5400A41C0D /* Views */,
 				E748061B27DA4A3500A41C0D /* ViewModels */,
+				E748062127DA52DC00A41C0D /* Requests */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -191,6 +198,7 @@
 		E748060B27DA06AC00A41C0D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E748062627DA5B8100A41C0D /* ViewModel */,
 				E748060C27DA06B600A41C0D /* UIComponents */,
 			);
 			path = Helpers;
@@ -252,6 +260,23 @@
 				E748061F27DA4AAE00A41C0D /* Question.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E748062127DA52DC00A41C0D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				E748062227DA530000A41C0D /* GetChargingStationsRequest.swift */,
+				E748062427DA583100A41C0D /* ChargingStationData.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		E748062627DA5B8100A41C0D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E748062727DA5B9000A41C0D /* LoadingState.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E748060227D9EB8A00A41C0D /* UserProfileView.swift in Sources */,
+				E748062527DA583100A41C0D /* ChargingStationData.swift in Sources */,
 				E748061427DA210600A41C0D /* ProgressBarView.swift in Sources */,
 				E74805E827D9E97200A41C0D /* RootView.swift in Sources */,
 				E748061727DA325B00A41C0D /* HomeViewModel.swift in Sources */,
@@ -335,7 +361,9 @@
 				E748062027DA4AAE00A41C0D /* Question.swift in Sources */,
 				E748061227DA1B7E00A41C0D /* HomeView.swift in Sources */,
 				E748061D27DA4A7A00A41C0D /* FAQViewModel.swift in Sources */,
+				E748062827DA5B9000A41C0D /* LoadingState.swift in Sources */,
 				E74805E627D9E97200A41C0D /* Geo_BrumaireApp.swift in Sources */,
+				E748062327DA530000A41C0D /* GetChargingStationsRequest.swift in Sources */,
 				E74805FF27D9EB6800A41C0D /* FAQView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
