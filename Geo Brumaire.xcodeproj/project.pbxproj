@@ -20,6 +20,8 @@
 		E748061427DA210600A41C0D /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748061327DA210600A41C0D /* ProgressBarView.swift */; };
 		E748061727DA325B00A41C0D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748061627DA325B00A41C0D /* HomeViewModel.swift */; };
 		E748061A27DA430600A41C0D /* ChargingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748061927DA430600A41C0D /* ChargingStation.swift */; };
+		E748061D27DA4A7A00A41C0D /* FAQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748061C27DA4A7A00A41C0D /* FAQViewModel.swift */; };
+		E748062027DA4AAE00A41C0D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748061F27DA4AAE00A41C0D /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		E748061327DA210600A41C0D /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		E748061627DA325B00A41C0D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E748061927DA430600A41C0D /* ChargingStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargingStation.swift; sourceTree = "<group>"; };
+		E748061C27DA4A7A00A41C0D /* FAQViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewModel.swift; sourceTree = "<group>"; };
+		E748061F27DA4AAE00A41C0D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +122,9 @@
 		E74805F627D9EA9400A41C0D /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
+				E748061E27DA4A9D00A41C0D /* Models */,
 				E74805FC27D9EB5400A41C0D /* Views */,
+				E748061B27DA4A3500A41C0D /* ViewModels */,
 			);
 			path = FAQ;
 			sourceTree = "<group>";
@@ -232,6 +238,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E748061B27DA4A3500A41C0D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E748061C27DA4A7A00A41C0D /* FAQViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E748061E27DA4A9D00A41C0D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E748061F27DA4AAE00A41C0D /* Question.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -310,7 +332,9 @@
 				E748060E27DA06CC00A41C0D /* LargeButtonStyle.swift in Sources */,
 				E74805FB27D9EB3F00A41C0D /* MapView.swift in Sources */,
 				E748060827D9FB6A00A41C0D /* MapViewModel.swift in Sources */,
+				E748062027DA4AAE00A41C0D /* Question.swift in Sources */,
 				E748061227DA1B7E00A41C0D /* HomeView.swift in Sources */,
+				E748061D27DA4A7A00A41C0D /* FAQViewModel.swift in Sources */,
 				E74805E627D9E97200A41C0D /* Geo_BrumaireApp.swift in Sources */,
 				E74805FF27D9EB6800A41C0D /* FAQView.swift in Sources */,
 			);

@@ -6,19 +6,21 @@ struct RootView: View {
             NavigationView {
                 HomeView()
             }
-                .tabItem {
-                    Label("Home", systemImage: "house.fill")
-                }
+            .tabItem {
+                Label("Home", systemImage: "house.fill")
+            }
             
             MapView()
                 .tabItem {
                     Label("Map", systemImage: "location.fill")
                 }
             
-            FAQView()
-                .tabItem {
-                    Label("FAQ", systemImage: "questionmark")
-                }
+            NavigationView {
+                FAQView()
+            }
+            .tabItem {
+                Label("FAQ", systemImage: "questionmark")
+            }
             
             UserProfileView()
                 .tabItem {
