@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct RootView: View {
+    @StateObject var user = User()
+    
     var body: some View {
         TabView {
             NavigationView {
@@ -26,6 +28,9 @@ struct RootView: View {
                 .tabItem {
                     Label("User Profile", systemImage: "person.fill")
                 }
+        }
+        .fullScreenCover(isPresented: $user.isAuthenticated.opposite) {
+            WelcomeView()
         }
     }
 }
