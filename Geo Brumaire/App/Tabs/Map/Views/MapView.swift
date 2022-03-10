@@ -3,11 +3,15 @@ import MapKit
 
 struct MapView: View {
     @StateObject var viewModel = MapViewModel()
-    @State var userTrackingMode: MapUserTrackingMode = .follow
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $viewModel.region, showsUserLocation: true, userTrackingMode: $userTrackingMode)
+            Map(coordinateRegion: $viewModel.region,
+                showsUserLocation: true,
+                userTrackingMode: $viewModel.userTrackingMode,
+                annotationItems: viewModel.chargingStations) { chargingStation in
+                MapMarker(coordinate: chargingStation.coordinates)
+            }
             
             VStack {
                 HStack {
@@ -17,8 +21,6 @@ struct MapView: View {
                 }
                 
                 Spacer()
-                
-                toggleTripButton
             }
             .padding()
         }
@@ -38,15 +40,5 @@ private extension MapView {
                 .cornerRadius(12)
                 .shadow(color: Color(uiColor: UIColor.label).opacity(0.2), radius: 3)
         }
-    }
-    
-    var toggleTripButton: some View {
-        Button {
-            viewModel.hasJourneyStarted.toggle()
-        } label: {
-            Text(viewModel.hasJourneyStarted ? "End trip" : "Start trip")
-                .fontWeight(.bold)
-        }
-        .buttonStyle(LargeButtonStyle(foregroundColor: .white, backgroundColor: viewModel.hasJourneyStarted ? .red : .blue))
     }
 }
