@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject var viewModel = LoginViewModel()
+    @ObservedObject var viewModel = LoginViewModel()
+    
+    @EnvironmentObject var user: User
     
     var body: some View {
         List {
@@ -31,6 +33,9 @@ struct LoginView: View {
                 }
 
             }
+        }
+        .onAppear {
+            viewModel.user = user
         }
     }
 }

@@ -1,21 +1,31 @@
 import SwiftUI
 
+enum NavigationState: Hashable {
+    case home
+    case map
+    case faq
+    case userProfile
+}
+
 struct RootView: View {
     @StateObject var user = User()
+    @State var navigationState: NavigationState = .home
     
     var body: some View {
-        TabView {
+        TabView(selection: $navigationState) {
             NavigationView {
-                HomeView()
+                HomeView(navigationState: $navigationState)
             }
             .tabItem {
                 Label("Home", systemImage: "house.fill")
             }
+            .tag(NavigationState.home)
             
             MapView()
                 .tabItem {
                     Label("Map", systemImage: "location.fill")
                 }
+                .tag(NavigationState.map)
             
             NavigationView {
                 FAQView()
@@ -23,14 +33,20 @@ struct RootView: View {
             .tabItem {
                 Label("FAQ", systemImage: "questionmark")
             }
+            .tag(NavigationState.faq)
             
-            UserProfileView()
-                .tabItem {
-                    Label("User Profile", systemImage: "person.fill")
-                }
+            NavigationView {
+                UserProfileView()
+            }
+            .tabItem {
+                Label("User Profile", systemImage: "person.fill")
+            }
+            .tag(NavigationState.userProfile)
+            .environmentObject(user)
         }
         .fullScreenCover(isPresented: $user.isAuthenticated.opposite) {
             WelcomeView()
+                .environmentObject(user)
         }
     }
 }

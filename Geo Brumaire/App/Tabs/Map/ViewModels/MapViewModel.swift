@@ -4,7 +4,7 @@ import SwiftUI
 
 class MapViewModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var state: LoadingState = .loading
-    @Published var region = MKCoordinateRegion()
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.848943464008116, longitude: 2.3893738254486143), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
     @Published var userTrackingMode: MapUserTrackingMode = .follow
     @Published var chargingStations: [ChargingStation] = []
     
@@ -39,6 +39,7 @@ class MapViewModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     @MainActor func getChargingStations() async {
+        state = .loading
         do {
             let request = try GetChargingStationsRequest(latitude: region.center.latitude, longitude: region.center.longitude)
             let remoteChargingStations = try await request.perform()
@@ -47,7 +48,7 @@ class MapViewModel: NSObject, CLLocationManagerDelegate, ObservableObject {
                                                                             longitude: $0.addressInfo.longitude) }
             state = .success
         } catch {
-            state = .failure
+            state = .failure(error)
         }
     }
     

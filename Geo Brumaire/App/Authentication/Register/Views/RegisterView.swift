@@ -26,7 +26,7 @@ struct RegisterView: View {
             Section("Password") {
                 HStack {
                     Text("Password")
-                    SecureField("Enter your email", text: $viewModel.password)
+                    SecureField("Enter your password", text: $viewModel.password)
                         .multilineTextAlignment(.trailing)
                 }
                 
