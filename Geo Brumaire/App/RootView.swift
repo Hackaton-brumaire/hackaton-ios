@@ -3,6 +3,11 @@ import SwiftUI
 struct RootView: View {
     var body: some View {
         TabView {
+            HomeView()
+                .tabItem {
+                    Label("Home", systemImage: "house.fill")
+                }
+            
             MapView()
                 .tabItem {
                     Label("Map", systemImage: "location.fill")

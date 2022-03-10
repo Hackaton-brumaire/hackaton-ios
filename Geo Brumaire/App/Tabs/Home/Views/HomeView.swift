@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct MapView: View {
+struct HomeView: View {
     var body: some View {
-        Text("MapView")
+        Text("HomeView")
     }
 }

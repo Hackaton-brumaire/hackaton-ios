@@ -14,6 +14,9 @@
 		E74805FB27D9EB3F00A41C0D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74805FA27D9EB3F00A41C0D /* MapView.swift */; };
 		E74805FF27D9EB6800A41C0D /* FAQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74805FE27D9EB6800A41C0D /* FAQView.swift */; };
 		E748060227D9EB8A00A41C0D /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748060127D9EB8A00A41C0D /* UserProfileView.swift */; };
+		E748060827D9FB6A00A41C0D /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748060727D9FB6A00A41C0D /* MapViewModel.swift */; };
+		E748060E27DA06CC00A41C0D /* LargeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748060D27DA06CC00A41C0D /* LargeButtonStyle.swift */; };
+		E748061227DA1B7E00A41C0D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748061127DA1B7E00A41C0D /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,10 @@
 		E74805FA27D9EB3F00A41C0D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E74805FE27D9EB6800A41C0D /* FAQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQView.swift; sourceTree = "<group>"; };
 		E748060127D9EB8A00A41C0D /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		E748060627D9F78100A41C0D /* Geo-Brumaire-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Geo-Brumaire-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E748060727D9FB6A00A41C0D /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		E748060D27DA06CC00A41C0D /* LargeButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButtonStyle.swift; sourceTree = "<group>"; };
+		E748061127DA1B7E00A41C0D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +64,7 @@
 		E74805E427D9E97200A41C0D /* Geo Brumaire */ = {
 			isa = PBXGroup;
 			children = (
+				E748060627D9F78100A41C0D /* Geo-Brumaire-Info.plist */,
 				E74805E527D9E97200A41C0D /* Geo_BrumaireApp.swift */,
 				E74805F327D9EA0B00A41C0D /* App */,
 				E74805F427D9EA1000A41C0D /* Resources */,
@@ -77,9 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				E74805E727D9E97200A41C0D /* RootView.swift */,
-				E74805F527D9EA8D00A41C0D /* Map */,
-				E74805F627D9EA9400A41C0D /* FAQ */,
-				E74805F727D9EA9800A41C0D /* UserProfile */,
+				E748060A27DA069200A41C0D /* Tabs */,
+				E748060927DA068B00A41C0D /* Shared */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -96,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				E74805F827D9EADD00A41C0D /* Views */,
+				E748060327D9F13000A41C0D /* ViewModels */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -136,6 +144,65 @@
 			isa = PBXGroup;
 			children = (
 				E748060127D9EB8A00A41C0D /* UserProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E748060327D9F13000A41C0D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E748060727D9FB6A00A41C0D /* MapViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E748060927DA068B00A41C0D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E748060B27DA06AC00A41C0D /* Helpers */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E748060A27DA069200A41C0D /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				E748060F27DA196400A41C0D /* Home */,
+				E74805F527D9EA8D00A41C0D /* Map */,
+				E74805F627D9EA9400A41C0D /* FAQ */,
+				E74805F727D9EA9800A41C0D /* UserProfile */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		E748060B27DA06AC00A41C0D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E748060C27DA06B600A41C0D /* UIComponents */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E748060C27DA06B600A41C0D /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E748060D27DA06CC00A41C0D /* LargeButtonStyle.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		E748060F27DA196400A41C0D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E748061027DA1B7000A41C0D /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E748061027DA1B7000A41C0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E748061127DA1B7E00A41C0D /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,7 +279,10 @@
 			files = (
 				E748060227D9EB8A00A41C0D /* UserProfileView.swift in Sources */,
 				E74805E827D9E97200A41C0D /* RootView.swift in Sources */,
+				E748060E27DA06CC00A41C0D /* LargeButtonStyle.swift in Sources */,
 				E74805FB27D9EB3F00A41C0D /* MapView.swift in Sources */,
+				E748060827D9FB6A00A41C0D /* MapViewModel.swift in Sources */,
+				E748061227DA1B7E00A41C0D /* HomeView.swift in Sources */,
 				E74805E627D9E97200A41C0D /* Geo_BrumaireApp.swift in Sources */,
 				E74805FF27D9EB6800A41C0D /* FAQView.swift in Sources */,
 			);
@@ -348,6 +418,8 @@
 				DEVELOPMENT_TEAM = TC8CL45HA7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Geo-Brumaire-Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Geo Brumaire needs the right to localize you in order to work";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -378,6 +450,8 @@
 				DEVELOPMENT_TEAM = TC8CL45HA7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Geo-Brumaire-Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Geo Brumaire needs the right to localize you in order to work";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
