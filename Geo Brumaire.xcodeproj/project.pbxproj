@@ -32,6 +32,8 @@
 		E748063A27DA6BB400A41C0D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748063927DA6BB400A41C0D /* RegisterViewModel.swift */; };
 		E748063F27DA6F2F00A41C0D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748063E27DA6F2F00A41C0D /* LoginViewModel.swift */; };
 		E748064127DA6F6400A41C0D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748064027DA6F6400A41C0D /* LoginView.swift */; };
+		E748064427DB3E5E00A41C0D /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748064327DB3E5E00A41C0D /* RegisterRequest.swift */; };
+		E748064727DB550700A41C0D /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748064627DB550700A41C0D /* RequestError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		E748063927DA6BB400A41C0D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E748063E27DA6F2F00A41C0D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E748064027DA6F6400A41C0D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E748064327DB3E5E00A41C0D /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		E748064627DB550700A41C0D /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,9 +218,10 @@
 		E748060B27DA06AC00A41C0D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E748063127DA694B00A41C0D /* Extensions */,
 				E748062627DA5B8100A41C0D /* ViewModel */,
+				E748064527DB54E700A41C0D /* Request */,
 				E748060C27DA06B600A41C0D /* UIComponents */,
+				E748063127DA694B00A41C0D /* Extensions */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 			children = (
 				E748063527DA6AF100A41C0D /* Views */,
 				E748063827DA6B9300A41C0D /* ViewModels */,
+				E748064227DB3E4100A41C0D /* Requests */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -386,6 +392,22 @@
 				E748063E27DA6F2F00A41C0D /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E748064227DB3E4100A41C0D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				E748064327DB3E5E00A41C0D /* RegisterRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		E748064527DB54E700A41C0D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				E748064627DB550700A41C0D /* RequestError.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,10 +491,12 @@
 				E748063327DA695D00A41C0D /* BindingExtension.swift in Sources */,
 				E748061A27DA430600A41C0D /* ChargingStation.swift in Sources */,
 				E748060E27DA06CC00A41C0D /* LargeButtonStyle.swift in Sources */,
+				E748064727DB550700A41C0D /* RequestError.swift in Sources */,
 				E748063A27DA6BB400A41C0D /* RegisterViewModel.swift in Sources */,
 				E74805FB27D9EB3F00A41C0D /* MapView.swift in Sources */,
 				E748060827D9FB6A00A41C0D /* MapViewModel.swift in Sources */,
 				E748062027DA4AAE00A41C0D /* Question.swift in Sources */,
+				E748064427DB3E5E00A41C0D /* RegisterRequest.swift in Sources */,
 				E748061227DA1B7E00A41C0D /* HomeView.swift in Sources */,
 				E748061D27DA4A7A00A41C0D /* FAQViewModel.swift in Sources */,
 				E748062827DA5B9000A41C0D /* LoadingState.swift in Sources */,

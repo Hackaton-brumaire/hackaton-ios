@@ -3,6 +3,8 @@ import SwiftUI
 struct RegisterView: View {
     @StateObject var viewModel = RegisterViewModel()
     
+    @EnvironmentObject var user: User
+    
     var body: some View {
         List {
             Section("Contact information") {
@@ -40,15 +42,30 @@ struct RegisterView: View {
         .navigationTitle("Register")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    Task {
-                        await viewModel.register()
+                switch viewModel.state {
+                case .loading:
+                    ProgressView()
+                default:
+                    Button {
+                        Task {
+                            await viewModel.register()
+                        }
+                    } label: {
+                        Text("Register")
                     }
-                } label: {
-                    Text("Register")
+                    .disabled(!viewModel.isRegisterButtonClickable)
                 }
-
             }
+        }
+        .alert("Error", isPresented: $viewModel.isErrorAlertPresented, actions: {
+            Button("Ok", role: .cancel) {
+                viewModel.isErrorAlertPresented = false
+            }
+        }, message: {
+            Text("An error occured. Please verify your information.")
+        })
+        .onAppear {
+            viewModel.user = user
         }
     }
 }
