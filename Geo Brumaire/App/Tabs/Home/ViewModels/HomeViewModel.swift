@@ -3,15 +3,15 @@ import SwiftUI
 final class HomeViewModel: ObservableObject {
     @Published var isConnected: Bool = false
     @Published var isCongratulationMessagePresented: Bool = false
-    @Published var progressValue: Int = 20
+    @Published var progressValue: Int = 80
     
     var canRequestCoupon: Bool {
         progressValue == 100
     }
     
     func incrementScore() {
-        withAnimation(.linear) {
-            if progressValue < 100 {
+        if isConnected && progressValue < 100 {
+            withAnimation(.linear) {
                 progressValue += 5
             }
         }

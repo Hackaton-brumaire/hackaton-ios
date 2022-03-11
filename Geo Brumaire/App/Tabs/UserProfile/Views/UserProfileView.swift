@@ -5,7 +5,8 @@ struct UserProfileView: View {
     
     var body: some View {
         Button {
-            user.isAuthenticated.toggle()
+            user.sessionId = nil
+            user.isAuthenticated = false
         } label: {
             HStack {
                 Image(systemName: "rectangle.portrait.and.arrow.right")

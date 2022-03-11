@@ -47,6 +47,9 @@ struct RootView: View {
         .fullScreenCover(isPresented: $user.isAuthenticated.opposite) {
             WelcomeView()
                 .environmentObject(user)
+                .onAppear {
+                    navigationState = .home
+                }
         }
     }
 }
