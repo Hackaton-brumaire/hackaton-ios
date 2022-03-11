@@ -22,9 +22,9 @@ final class RegisterViewModel: ObservableObject {
         state = .loading
         do {
             let request = try RegisterRequest(username: username, mail: email, password: password)
-            let token = try await request.perform()
+            let sessionId = try await request.perform()
             state = .success
-            user?.sessionId = token
+            user?.sessionId = sessionId
             user?.isAuthenticated = true
         } catch {
             state = .failure(error)

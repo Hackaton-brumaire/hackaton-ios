@@ -23,7 +23,10 @@ struct LoginView: View {
         }
         .navigationTitle("Login")
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
+            switch viewModel.state {
+            case .loading:
+                ProgressView()
+            default:
                 Button {
                     Task {
                         await viewModel.login()
@@ -31,9 +34,16 @@ struct LoginView: View {
                 } label: {
                     Text("Login")
                 }
-
+                .disabled(!viewModel.isLoginButtonClickable)
             }
         }
+        .alert("Error", isPresented: $viewModel.isErrorAlertPresented, actions: {
+            Button("Ok", role: .cancel) {
+                viewModel.isErrorAlertPresented = false
+            }
+        }, message: {
+            Text("An error occured. Please verify your information.")
+        })
         .onAppear {
             viewModel.user = user
         }
